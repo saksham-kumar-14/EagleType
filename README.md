@@ -10,3 +10,7 @@
 - Axios
 
 
+### Home Page when logged in by the username 'saksham' : 
+![Home page](https://github.com/saksham-kumar-14/EagleType/blob/master/image.png)
+
+
