@@ -1,0 +1,72 @@
+.container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.subcontainer{
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem 1.5rem;
+    border: solid black 0.25rem;
+    border-radius: 1rem;
+}
+.input_div{
+    display: flex;
+    flex-direction: column;
+    margin: 0.4rem 0;
+}.input{
+    width: 20rem;
+    padding: 0.35rem 0.45rem;
+}
+.password_input{
+    display: grid;
+    grid-template-columns: 85% 15%;
+}
+.input, .password_input{
+    border: solid black 0.125rem;
+    border-radius: 0.5rem;
+}.password_input input{
+    border: none;
+    padding: 0.35rem 0.45rem;
+    border-bottom-left-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+}
+.input_div label{
+    margin-left: 0.5rem;
+}
+.show_btn{
+    border-bottom-right-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+    color:white;
+    background-color: black;
+    transition: 200ms;
+}.show_btn:hover{
+    background-color: rgb(15,15,15);
+    transform: translateY(-0.1rem);
+}
+.submit_btn{
+    margin-top: 1.5rem;
+    padding: 0.65rem 0;
+    color: white;
+    background-color: rgb(15,15,15);
+    transition: 300ms;
+    border-radius: 1rem;
+    font-size: 1.1rem;
+}.submit_btn:hover{
+    background-color: rgb(0,0,0);
+    transform: scale(1.05);
+}
+.heading{
+    font-size: 2rem;
+    text-decoration: underline;
+}
+.info_div{
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+}
+.info_a{
+    color: red;
+    font-size: 1.2rem;
+}

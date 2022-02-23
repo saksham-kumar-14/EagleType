@@ -1,0 +1,38 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+.header span{
+    margin: 0.25rem 0.5rem;
+}
+.test{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 1rem 0;
+    transition: 200ms;
+    cursor: pointer;
+    padding: 0.6rem 0.75rem;
+    border-radius: 0.5rem;
+    border: solid black 0.2rem;
+}.test_sub_div_1{
+    display: flex;
+    align-items: center;
+}.test_sub_div_2{
+    display: flex;
+    flex-direction: column;
+}.test:hover{
+    background-color: rgb(240,240,240);
+}
+.test_sub_div_1 span{
+    color: red;
+}.test_sub_div_1 span:hover{
+    text-decoration: underline;
+}
+
+.name{
+    font-size: 2rem;
+}.email{
+    font-size: 1.75rem;
+    color: rgb(100,100,100);
+}
