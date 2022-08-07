@@ -11,7 +11,7 @@ const Home=()=>{
   const [dark_mode, set_dark_mode] = useState(false);
   const [time,set_time] = useState(0);
   const [words , set_words] = useState([]);
-  const [total_words, set_total_words] = useState(20);
+  const total_words = 50
 
   const [ user_info , set_user_info ] = useState();
 
