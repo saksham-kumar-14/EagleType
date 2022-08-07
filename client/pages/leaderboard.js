@@ -7,7 +7,7 @@ const Leaderboard=()=>{
     const [start, set_start] = useState(0);
     const [end, set_end] = useState(5);
 
-    useEffect(async ()=>{
+    async function get_scores(){
         const raw_data = await fetch("http://localhost:3001/getScores")
         let data = await raw_data.json()
 
@@ -20,9 +20,11 @@ const Leaderboard=()=>{
                 }
             }
         }
-        console.log(data);
-
         set_scores(data)
+    }
+
+    useEffect(()=>{
+        get_scores()
 
     },[])
 

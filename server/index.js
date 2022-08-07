@@ -94,6 +94,34 @@ app.post("/updateScores" , async (req,res)=>{
     res.json(score)
 })
 
+app.get("/api/validate_user", async (req,res)=>{
+    const user_token = req.headers["user-token"];
+    const decoded = jwt.decode(user_token);
+    
+    try{
+        const user = await user_model.findOne({
+            email: decoded.email
+        });
+        if (user) {
+            return res.json({
+                status:"ok",
+                user: user
+            })
+        }else{
+            return res.json({
+                status: 404,
+                user: false
+            })
+        }
+    }catch{
+        return res.json({
+            status: 404,
+            user:false
+        })
+    }
+
+})
+
 app.listen(3001, ()=>{
     console.log("Sever is running at http://localhost:3001");
 })

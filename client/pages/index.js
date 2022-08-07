@@ -4,27 +4,32 @@ import HomeHeader from '../components/home_header'
 import HomeTest from '../components/home_test'
 import words_api from "../components/words_api"
 import Head from 'next/head';
-import jwt from 'jsonwebtoken';
+import axios from 'axios';
 
 const Home=()=>{
   const [loggedin, set_loggedin] = useState(false);
   const [dark_mode, set_dark_mode] = useState(false);
   const [time,set_time] = useState(0);
   const [words , set_words] = useState([]);
-  const [total_words, set_total_words] = useState(100);
+  const [total_words, set_total_words] = useState(20);
 
   const [ user_info , set_user_info ] = useState();
 
-  useEffect(()=>{
-    const token = localStorage.getItem("token")
-
-    if(token){
-      const user = jwt.decode(token);
-      set_loggedin(true)
-      set_user_info(user)
-    }else{
-      set_loggedin(false)
+  async function get_user_info(){
+    const res = await axios.get("http://localhost:3001/api/validate_user", {
+      headers: {
+        "user-token": localStorage.getItem("token")
+      }
+    });
+    const data = await res.data;
+    if (data.user) {
+      set_loggedin(true);
+      set_user_info(data.user);
     }
+  }
+
+  useEffect(()=>{
+    get_user_info();
 
     let temp = [];
     for(let i=0;i<total_words;i++){
